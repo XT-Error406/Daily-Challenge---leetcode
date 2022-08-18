@@ -25,29 +25,33 @@ public:
         return count;
    }
     
+   
+   
+  //  ----> Aprroach 2
+       
+       
     int minSetSize(vector<int>& arr) {
 
-//     int n = arr.size();
+    int n = arr.size();
         
-//       vector<int>freq(100005);     
-//       // given 10^5 o(1)  S.P
+      vector<int>freq(100005);     
+      // given 10^5 o(1)  S.P
         
-//         for(int i=0;i<n;i++){
-//             freq[arr[i]]++;
-//         }
+        for(int i=0;i<n;i++){
+            freq[arr[i]]++;
+        }
         
-//      sort(freq.rbegin(),freq.rend()); 
+     sort(freq.rbegin(),freq.rend()); 
         
-//        int ans=0;
+       int ans=0;
         
-//        for(int i=0;i<n;i++){
+       for(int i=0;i<n;i++){
            
-//             ans+=freq[i];
+            ans+=freq[i];
            
-//             if(ans>=n/2) return(i+1);
-//         }
-//        return n;
+            if(ans>=n/2) return(i+1);
+        }
+       return n;
         
-      return miniset(arr);
     }
 };
