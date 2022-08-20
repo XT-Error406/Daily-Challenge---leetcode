@@ -1,4 +1,42 @@
- //  ----> B.F --TLE
+
+
+
+// Approach 1 --->Accpeted
+
+class Solution {
+public:
+    int minimumCardPickup(vector<int>& cards) {
+        
+           
+         int ways=INT_MAX;
+        
+         unordered_map<int,int>m;
+        
+        for(int i=0; i<cards.size(); i++){
+            
+            if(m.find(cards[i])!=m.end() && !m.empty()){
+                
+                ways=min( ways , i-m[cards[i]]+1);
+            }
+            
+            m[cards[i]]=i;
+        }
+ 
+        // if(ways==INT_MAX)return -1;
+        // return ways;
+        
+        
+         return ways == INT_MAX ? -1 : ways;
+       
+    }
+};
+
+
+
+
+
+
+//  ----> B.F --TLE
 
 class Solution {
 public:
